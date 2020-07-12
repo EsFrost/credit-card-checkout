@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title>Credit Card Checkout</title>
+	<link rel="stylesheet" type="text/css" href="./main.css">
+</head>
+<body>
+
+	<div class='container'>
+	
+		<div class='cart'>
+			<div class="cart-sum">
+				<i></i>
+				<h3>Cart summary</h3>
+				<small>(<a href="#">Edit</a>)</small>
+			</div>
+			
+			<!-- grid this -->
+			<div class="products">
+				<h4 class="prod-name">1 x Product</h4>
+				<h4 class="prod-price">Price</h4>
+				<small class="prod-desc">Short Description</small>
+			</div>
+			<div class="products">
+				<h4 class="prod-name">1 x Product</h4>
+				<h4 class="prod-price">Price</h4>
+				<small class="prod-desc">Short Description</small>
+			</div>
+			<div class="products">
+				<h4 class="prod-name">1 x Product</h4>
+				<h4 class="prod-price">Price</h4>
+				<small class="prod-desc">Short Description</small>
+			</div>
+			<div class="subtotal">
+				Sub total: <custom>subtotal here</custom>
+			</div>
+		</div>
+	
+		<div class='billing'>
+			<h3>Billing details</h3>
+			
+			<label for="first-name">First Name</label>
+			<input id="first-name" name="first-name" type="text">
+			<label for="last-name">Last Name</label>
+			<input id="last-name" name="last-name" type="text">
+			<label for="email">Email Address</label>
+			<input id="email" name="email" type="email">
+			<label for="country">Country</label>
+			<select id="country" name="country">
+				<option style="display:none;"></option>
+				<option value="us">United States</option>
+				<option value="uk">United Kingdom</option>
+				<option value="ca">Canada</option>
+				<option value="aus">Australia</option>
+				<option value="nz">New Zealand</option>
+			</select>
+			<div class="billing-footer">
+				<label for="state">State / County</label>
+				<input id="state" name="state" type="text">
+				<label for="zip">Zip / Postal Code</label>
+				<input id="zip" name="zip" type="text">
+			</div>
+			
+		</div>
+		
+		<div class='payment'>
+			<h3>Payment method</h3>
+		
+			<div class="credit-box">
+				<input id="c-card" name="c-card" type="radio" value="credit-card">
+				<label for="c-card">Credit card</label>
+				<span class="card-images">
+					<img src="./media/images/visa.png" alt="Visa">
+					<img src="./media/images/mastercard.png" alt="Mastercard">
+					<img src="./media/images/american_express.png" alt="American Express">
+				</span>
+			</div>
+			
+			<label for="card-number">Card number</label>
+			<div class="card-text">
+				<input id="card-number" name="card-number" type="text">
+				<img src="./media/images/visa.png" alt="Visa card">
+			</div>
+			<div class="exp-date-sec-code">
+				<label for="exp-date-month">Expiration date</label>
+				<select id="exp-date-month" name="exp-date-month">
+					<option selected disabled>Month</option>
+					<option value="jan">January</option>
+					<option value="feb">February</option>
+					<option value="mar">March</option>
+					<option value="apr">April</option>
+					<option value="may">May</option>
+					<option value="jun">June</option>
+					<option value="jul">Jule</option>
+					<option value="aug">August</option>
+					<option value="sep">September</option>
+					<option value="oct">October</option>
+					<option value="nov">November</option>
+					<option value="dec">December</option>
+				</select>
+				
+				<select id="exp-date-year" name="exp-date-year">
+					<option selected disabled>Year</option>
+					<option value="2021">2021</option>
+					<option value="2022">2022</option>
+					<option value="2023">2023</option>
+					<option value="2024">2024</option>
+					<option value="2025">2025</option>
+				</select>
+				
+				<span class="sec-code-inline">
+					<label for="sec-code">Security code</label>
+					<input id="sec-code" name="sec-code" type="text">
+				</span>
+			</div>
+			
+			<small class="tos">By clicking the button you agree to the <a href="#">Terms and Conditions</a></small>
+			<button class="order">Place order</button>
+		</div>
+	
+	</div>
+	
+	<script src='./app.js'></script>
+</body>
+</html>

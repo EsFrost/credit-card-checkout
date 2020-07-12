@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	background-image: url('./media/images/bg.png');
+}
+
+input {
+	border: none;
+	border-bottom: 1px solid #1b7fde;
+	font-size: 15px;
+}
+
+.container {
+	background: #fff;
+	display: grid;
+	grid-template-areas: 'cart billing' 'cart payment';
+	gap: 20px;
+	padding: 10px;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+	border-radius: 8px;
+}
+
+select {
+	display: block;
+	margin: 0;
+	border: 1px solid #1b7fde;
+	border-radius: 5px;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: white;
+
+   	background-image: url('./media/images/arrow.svg');
+    background-repeat: no-repeat, repeat;
+    /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+    background-position: right .7em top 50%, 0 0;
+    /* icon size, then gradient */
+    background-size: .65em auto, 100%;
+}
+
+a, a:visited {
+	color: #000;
+}
+
+h3, h4, custom {
+	color: #1b7fde;
+}
+
+.cart {
+	grid-area: cart;
+	display: flex;
+	flex-direction: column;
+}
+
+.cart-sum {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.cart-sum small {
+	margin-left: 10px;
+	font-size: 10px;
+}
+
+.products {
+	display: grid;
+	grid-template-areas: 'prod-name price' 'desc price';
+	position: relative;
+}
+
+.products:after {
+	content: '';
+	position: absolute;
+	left: 12px;
+	top: 75px;
+	width: 80%;
+	border-bottom: 1px solid #1b7fde;
+}
+
+.prod-name {
+	grid-area: prod-name;
+}
+
+.prod-price {
+	grid-area: price;
+	font-size: 15px;
+}
+
+.prod-desc {
+	grid-area: desc;
+	margin-top: -10px;
+}
+
+.subtotal {
+	margin-top: 98px;
+	font-size: 15px;
+}
+
+custom {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.billing {
+	grid-area: billing;
+	display: flex;
+	flex-direction: column;
+}
+
+.billing label {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.billing-footer {
+	margin-top: 20px;
+}
+
+.payment {
+	grid-area: payment;
+	display: flex;
+	flex-direction: column;
+}
+
+.credit-box {
+	margin-top: 5px;
+	border: 2px solid #499ce9;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	position: relative;
+}
+
+.card-images {
+	position: absolute;
+	right: 10px;
+}
+
+.card-images img, .card-text img {
+	width: 25px;
+	height: 25px;
+}
+
+.payment label, .exp-date-sec-code, .tos, button {
+	margin-top: 20px;
+}
+
+.exp-date-sec-code {
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: row;
+	height: 40px;
+	align-items: flex-end;
+	position: relative;
+}
+
+#exp-date-month, #exp-date-year {
+	height: 40px;
+	width: 80px;
+	margin-left: 10px;
+}
+
+.sec-code-inline {
+	position: absolute;
+	right: 0;
+}
+
+.card-text {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+
+.card-text input {
+	flex-grow: 1;
+}
+
+.card-text img {
+	position: absolute;
+	right: 10px;
+}
+
+button {
+	border: none;
+	background: #1b7fde;
+	color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 18px;
+}
+
+button:hover {
+	background: #499ce9;
+}
+
+button:focus {
+	outline: none;
+}
+
+@media(max-width: 920px) {
+	body {
+		height: auto;
+	}
+
+	.container {
+		grid-template-areas: 'cart' 'billing' 'payment';
+	}
+
+	.products {
+		position: relative;
+	}
+
+	.products:after {
+		width: calc(100% - 12px);
+	}
+
+	.prod-price {
+		position: absolute;
+		right: 12px;
+	}
+
+	.sec-code-inline {
+		display: block;
+		left: 0;
+		top: 60px;
+	}
+
+	.tos {
+		margin-top: 40px;
+	}
+}
